@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: yabba-place
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydb?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: myuser
+    password: mypass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        show_sql: true
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
