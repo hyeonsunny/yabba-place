@@ -3,6 +3,7 @@ package com.yabba.place.gamereview.service.impl;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.yabba.place.gamereview.domain.dto.GameReviewDTO;
 import com.yabba.place.gamereview.domain.dto.GameReviewCondition;
@@ -14,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class GameReviewServiceImpl implements GameReviewService {
 	private final GameReviewRepository gameReviewRepository;
 
