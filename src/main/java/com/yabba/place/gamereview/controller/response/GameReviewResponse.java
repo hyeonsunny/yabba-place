@@ -3,6 +3,7 @@ package com.yabba.place.gamereview.controller.response;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.yabba.place.gamereview.domain.dto.GameReviewDTO;
 
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -55,6 +56,7 @@ public record GameReviewResponse(
 	int rating,
 
 	@Schema(description = "등록 일시")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime createdAt
 ) {
 	public static GameReviewResponse fromGameReviewDto(GameReviewDTO dto) {
