@@ -134,8 +134,8 @@ class GameReviewServiceImplTest {
 
 		gameReviewService.remove(ID);
 
-		Optional<GameReview> fetchedGameReview = gameReviewRepository.findByIdAndDeletedAtIsNull(ID);
-		assertThat(fetchedGameReview).isPresent();
+		gameReviewRepository.findByIdAndDeletedAtIsNull(ID)
+			.ifPresent(gameReview -> assertThat(gameReview.getDeletedAt()).isNotNull());
 	}
 
 	@Test
