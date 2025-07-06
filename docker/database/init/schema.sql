@@ -19,3 +19,21 @@ CREATE TABLE `game_review`
     `updated_at`          datetime,
     PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `taste_review`
+(
+   `id`                 bigint          NOT NULL AUTO_INCREMENT,
+   `user_id`            bigint          NOT NULL,
+   `title`              varchar(30)     NOT NULL,
+   `content`            text            NULL,
+   `rating`             bigint          NULL,
+   `game_date`          date            NOT NULL,
+   `stadium_name`       varchar(12)     NOT NULL,
+   `food_name`          varchar(100)    NOT NULL,
+   `food_location_type` varchar(20)     NOT NULL,
+   `food_price`         int             NULL,
+   `create_at`          datetime        NOT NULL,
+   `update_at`          datetime        NULL,
+   `delete_at`          datetime        NULL,
+   PRIMARY KEY(`id`)
+);
