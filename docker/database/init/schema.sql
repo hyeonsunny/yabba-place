@@ -19,3 +19,15 @@ CREATE TABLE `game_review`
     `updated_at`          datetime,
     PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `stadium`
+(
+    `id`         bigint      NOT NULL AUTO_INCREMENT,
+    `team_id`    bigint      NOT NULL,
+    `name`       varchar(12) NOT NULL,
+    `address`    text,
+    `created_at` datetime,
+    `updated_at` datetime,
+    `deleted_at` datetime,
+    PRIMARY KEY (`id`)
+);
