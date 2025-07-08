@@ -32,3 +32,15 @@ CREATE TABLE `stadium`
     `deleted_at` datetime,
     PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `team`
+(
+    `id`          bigint      NOT NULL AUTO_INCREMENT,
+    `stadium_id`  bigint      NOT NULL,
+    `name`        varchar(10) NOT NULL,
+    `prefix`      varchar(10) NOT NULL,
+    `created_at`  datetime,
+    `updated_at`  datetime,
+    `deleted_at`  datetime,
+    PRIMARY KEY (`id`)
+);
