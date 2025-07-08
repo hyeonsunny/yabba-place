@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.yabba.place.common.BaseIntegrationTest;
 import com.yabba.place.stadium.controller.request.StadiumRequest;
 import com.yabba.place.stadium.domain.dto.StadiumDTO;
 import com.yabba.place.stadium.service.StadiumService;
@@ -22,7 +23,7 @@ import com.yabba.place.stadium.service.StadiumService;
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-class StadiumControllerTest {
+class StadiumControllerTest extends BaseIntegrationTest {
 	@Autowired
 	private MockMvc mockMvc;
 

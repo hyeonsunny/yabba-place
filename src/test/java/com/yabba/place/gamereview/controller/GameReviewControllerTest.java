@@ -18,6 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.yabba.place.common.BaseIntegrationTest;
 import com.yabba.place.gamereview.controller.request.GameReviewRequest;
 import com.yabba.place.gamereview.domain.dto.GameReviewDTO;
 import com.yabba.place.gamereview.service.GameReviewService;
@@ -25,7 +26,7 @@ import com.yabba.place.gamereview.service.GameReviewService;
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-class GameReviewControllerTest {
+class GameReviewControllerTest extends BaseIntegrationTest {
 	@Autowired
 	private MockMvc mockMvc;
 
