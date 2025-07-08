@@ -44,3 +44,21 @@ CREATE TABLE `team`
     `deleted_at`  datetime,
     PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `taste_review`
+(
+   `id`                 bigint          NOT NULL AUTO_INCREMENT,
+   `user_id`            bigint          NOT NULL,
+   `title`              varchar(30)     NOT NULL,
+   `content`            text            NULL,
+   `rating`             int             NULL,
+   `game_date`          date            NOT NULL,
+   `stadium_name`       varchar(12)     NOT NULL,
+   `food_name`          varchar(30)     NOT NULL,
+   `food_location_type` varchar(20)     NOT NULL,
+   `food_price`         int             NULL,
+   `created_at`         datetime        NOT NULL,
+   `updated_at`         datetime        NULL,
+   `deleted_at`         datetime        NULL,
+   PRIMARY KEY(`id`)
+);
