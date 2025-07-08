@@ -9,15 +9,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import com.yabba.place.common.BaseIntegrationTest;
 import com.yabba.place.stadium.domain.dto.StadiumDTO;
 import com.yabba.place.stadium.domain.entity.Stadium;
 
-@SpringBootTest
-@Transactional
-class StadiumRepositoryTest {
+@DataJpaTest
+class StadiumRepositoryTest extends BaseIntegrationTest {
 	@Autowired
 	private StadiumRepository stadiumRepository;
 

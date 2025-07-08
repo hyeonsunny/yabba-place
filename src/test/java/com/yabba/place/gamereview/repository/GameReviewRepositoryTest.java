@@ -1,7 +1,6 @@
 package com.yabba.place.gamereview.repository;
 
 import static com.yabba.place.gamereview.domain.define.Team.*;
-import static com.yabba.place.gamereview.domain.define.Team.KT;
 import static org.assertj.core.api.Assertions.*;
 
 import java.time.LocalDate;
@@ -11,15 +10,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import com.yabba.place.common.BaseIntegrationTest;
 import com.yabba.place.gamereview.domain.dto.GameReviewDTO;
 import com.yabba.place.gamereview.domain.entity.GameReview;
 
-@SpringBootTest
-@Transactional
-class GameReviewRepositoryTest {
+@DataJpaTest
+class GameReviewRepositoryTest extends BaseIntegrationTest {
 	@Autowired
 	private GameReviewRepository gameReviewRepository;
 
