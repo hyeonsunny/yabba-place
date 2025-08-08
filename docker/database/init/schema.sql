@@ -35,30 +35,46 @@ CREATE TABLE `stadium`
 
 CREATE TABLE `team`
 (
-    `id`          bigint      NOT NULL AUTO_INCREMENT,
-    `stadium_id`  bigint      NOT NULL,
-    `name`        varchar(10) NOT NULL,
-    `prefix`      varchar(10) NOT NULL,
-    `created_at`  datetime,
-    `updated_at`  datetime,
-    `deleted_at`  datetime,
+    `id`         bigint      NOT NULL AUTO_INCREMENT,
+    `stadium_id` bigint      NOT NULL,
+    `name`       varchar(10) NOT NULL,
+    `prefix`     varchar(10) NOT NULL,
+    `created_at` datetime,
+    `updated_at` datetime,
+    `deleted_at` datetime,
     PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `taste_review`
 (
-   `id`                 bigint          NOT NULL AUTO_INCREMENT,
-   `user_id`            bigint          NOT NULL,
-   `title`              varchar(30)     NOT NULL,
-   `content`            text            NULL,
-   `rating`             int             NULL,
-   `game_date`          date            NOT NULL,
-   `stadium_name`       varchar(12)     NOT NULL,
-   `food_name`          varchar(30)     NOT NULL,
-   `food_location_type` varchar(20)     NOT NULL,
-   `food_price`         int             NULL,
-   `created_at`         datetime        NOT NULL,
-   `updated_at`         datetime        NULL,
-   `deleted_at`         datetime        NULL,
-   PRIMARY KEY(`id`)
+    `id`                 bigint      NOT NULL AUTO_INCREMENT,
+    `user_id`            bigint      NOT NULL,
+    `title`              varchar(30) NOT NULL,
+    `content`            text NULL,
+    `rating`             int NULL,
+    `game_date`          date        NOT NULL,
+    `stadium_name`       varchar(12) NOT NULL,
+    `food_name`          varchar(30) NOT NULL,
+    `food_location_type` varchar(20) NOT NULL,
+    `food_price`         int NULL,
+    `created_at`         datetime    NOT NULL,
+    `updated_at`         datetime NULL,
+    `deleted_at`         datetime NULL,
+    PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `game_schedule`
+(
+    `id`              bigint      NOT NULL AUTO_INCREMENT,
+    `home_team_id`    bigint      NOT NULL,
+    `away_team_id`    bigint      NOT NULL,
+    `status`          varchar(11) NOT NULL,
+    `started_at`      datetime    NOT NULL,
+    `home_team_score` int    DEFAULT 0,
+    `away_team_score` int    DEFAULT 0,
+    `winner_team_id`  bigint DEFAULT 0,
+    `created_at`      datetime    NOT NULL,
+    `updated_at`      datetime NULL,
+    `deleted_at`      datetime NULL,
+    PRIMARY KEY (`id`)
+)
